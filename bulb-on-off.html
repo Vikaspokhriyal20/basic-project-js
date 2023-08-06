@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb on off in js</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Arya', monospace;
+        }
+
+        #main {
+            width: 80%;
+            margin: 10px auto 10px;
+            display: grid;
+            justify-content: center;
+            background-color: black;
+            padding: 10px;
+        }
+
+        .bulb {
+            height: 80px;
+            width: 80px;
+            border-radius:0px 0px 20px 20px;
+            background-color: beige;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .base {
+            width: 40px;
+            height: 180px;
+            border: 1px solid blue;
+            border-radius: 0px 0px 10px 10px;
+            position: relative;
+            margin-inline: auto;
+        }
+
+        #btn {
+            border: none;
+            outline: none;
+            padding: 8px 15px;
+            display: block;
+            text-align: center;
+            position: absolute;
+            background-color: yellow;
+            border-radius: 4px;
+            color:black;
+            text-transform: uppercase;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <div class="bulb">
+            <!-- bulb -->
+        </div>
+        <div class="base">
+            <!-- bulb-base -->
+        </div>
+        <button id='btn'>On</button>
+    </main>
+
+
+    <script>
+        let btn = document.querySelector('button');
+        let myBulb = document.querySelector('.bulb');
+
+        var count = 0;
+
+        btn.addEventListener('click', function () {
+            if (count == 0) {
+                myBulb.style.backgroundColor = 'yellow';
+                count = 1
+                btn.innerHTML = 'off';
+            } else {
+                myBulb.style.backgroundColor = 'white';
+                count = 0
+                btn.innerHTML = 'on';
+            }
+        });
+
+        
+    </script>
+</body>
+
+</html>
